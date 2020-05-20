@@ -54,7 +54,8 @@
     
     if(isset($_GET['id'])){
       
-        $con = mysqli_connect("localhost","bob","bob","univille");
+        //$con = mysqli_connect("localhost","bob","bob","univille");
+        include 'dbconnect.php';
         $sql = "select codigo, nome, sobrenome, email, senha, sexo from usuario where codigo = ?";
         $stmt = mysqli_prepare($con, $sql);
         mysqli_stmt_bind_param($stmt, "i", $_GET['id']);

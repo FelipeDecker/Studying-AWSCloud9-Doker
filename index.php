@@ -48,7 +48,8 @@
         <div class="container">
             
             <?php
-                $con = mysqli_connect("localhost","bob","bob","univille");
+                //$con = mysqli_connect("localhost","bob","bob","univille");
+                include 'dbconnect.php';
                 $sql = "select * from usuario";
                 $result = mysqli_query($con,$sql);
             ?>

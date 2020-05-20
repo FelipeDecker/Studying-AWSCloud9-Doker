@@ -30,7 +30,8 @@
 			";
 		}
     } else {
-    	$con = mysqli_connect("localhost","bob","bob","univille");
+    	//$con = mysqli_connect("localhost","bob","bob","univille");
+		include 'dbconnect.php';
 	    $sql = "update usuario set nome = ?, sobrenome = ?, email = ?, senha = ?, sexo = ? where codigo = ?";
 	    $stmt = mysqli_prepare($con, $sql);
 	    mysqli_stmt_bind_param($stmt, "ssssss", $nomePost, $sobrenomePost, $emailPost, $senhaPost, $sexoPost, $idPost);

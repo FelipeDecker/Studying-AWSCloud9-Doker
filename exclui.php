@@ -1,7 +1,8 @@
 <?php
     $id = $_GET['id'];
     
-    $con = mysqli_connect("localhost","bob","bob","univille");
+    //$con = mysqli_connect("localhost","bob","bob","univille");
+	include 'dbconnect.php';
     $sql = "delete from usuario where codigo = ?";
     $stmt = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id);
