@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+   appphp2020felipe:
+     depends_on:
+       - dbfelipe
+     #image: waltercoan/appphp2020:latest
+     image: felipe1unico/appphp2020:latest
+     ports:
+       - "8080:80"
+     restart: always
+     environment:
+       - DB_HOST=dbfelipe
+       - DB_USER=root
+       - DB_PASSWORD=bob
+       - DB_NAME=univille
+   dbfelipe:
+     image: mysql:5.7
+     restart: always
+#     ports:
+#       - "3306:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: bob
+       MYSQL_DATABASE: univille
+       MYSQL_USER: bob
+       MYSQL_PASSWORD: bob
+     #volumes:
+     #  - ./db/:/docker-entrypoint-initdb.d
