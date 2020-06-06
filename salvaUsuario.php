@@ -9,7 +9,6 @@
     
     if($idPost == 0){
     	
-    	//$con = mysqli_connect("localhost","bob","bob","univille");
 	    $sql = "insert into usuario(nome, sobrenome, email, senha, sexo) values(?, ?, ?, ?, ?)";
 	    $stmt = mysqli_prepare($con, $sql);
 	    mysqli_stmt_bind_param($stmt, "sssss", $nomePost, $sobrenomePost, $emailPost, $senhaPost, $sexoPost);
